@@ -1,0 +1,41 @@
+.header {
+    height: 55px;
+    background: #0067A3;
+    display: flex;
+    color: #FFFF;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 14px;
+}
+
+h1 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    margin-left: 15px
+}
+
+
+.avatar {
+    width: 40px;
+    height: auto;
+}
+
+.iconForm {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+
+.LogIn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-right: 15px;
+    align-items: center;
+}

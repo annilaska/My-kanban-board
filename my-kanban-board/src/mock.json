@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Fix Save to collection icon",
+        "description": "Icon in 'Save to collection' component is broken now, we need to fix it",
+        "created": "2021-09-27T11:11:42.182Z",
+        "status": "Backlog"
+    },
+    {
+        "id": "2",
+        "title": "Add user section to settings",
+        "description": "There should be a user section in setting where users can edit their profile data: name, phone, email, etc.",
+        "created": "2021-09-27T11:13:57.611Z",
+        "status": "Backlog"
+    },
+    {
+        "id": "3",
+        "title": "Update API routes",
+        "description": "Update API routes to use the newest versions",
+        "created": "2021-09-27T11:14:58.972Z",
+        "status": "in Progress"
+    },
+    {
+        "id": "4",
+        "title": "Implement loader",
+        "description": "Fetching data from server takes some time. We need to implement a loader so user can see that data fetching is in progress.",
+        "created": "2021-09-27T11:16:47.091Z",
+        "status": "Finished"
+    }
+]

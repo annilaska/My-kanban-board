@@ -1,0 +1,24 @@
+.cards {
+    width: 282px;
+    background: #FFFF;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: start;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+
+.addButton {
+    border: none;
+    color:#5E6C84;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    color:#000000;
+}
