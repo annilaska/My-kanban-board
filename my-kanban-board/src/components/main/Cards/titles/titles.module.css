@@ -1,0 +1,54 @@
+.h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+}
+
+.list {
+    width: 282px;
+    background: #FFFF;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: start;
+}
+
+
+.addButton {
+    border: none;
+    color: #5E6C84;
+    cursor: pointer;
+    border-top: 0.5px #000000 solid;
+    text-align: start;
+    width: 250px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+.addButton:hover {
+    color: #000000;
+}
+
+.mock {
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+
+.title {
+    margin: 28px 20px;
+}
+
+.titleLink {
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav {
+    width: 100px;
+    border: 0.5px black solid; 
+    border-radius:6px; 
+   
+}

@@ -1,16 +1,22 @@
 import React from 'react';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {BrowserRouter} from 'react-router-dom'
 
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Main from './components/main/main';
-import mockData from './mock.json'
+// import data from './mock.json'
 
 
 function App() {
-  const [dataArray, setData] = useState(mockData);
+  const initialState = JSON.parse(window.localStorage.getItem('dataArray')) || []
+  const [dataArray, setData] = useState(initialState);
+
+
+  useEffect(() => {
+    window.localStorage.setItem('dataArray', JSON.stringify(dataArray))
+  }, [dataArray])
 
   return (
     <BrowserRouter>

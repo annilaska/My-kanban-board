@@ -1,0 +1,38 @@
+.form {
+    width: 282px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.newTaskInput {
+    border: none;
+    width: 200px;
+    margin: 5px 2px;
+}
+
+
+.textarea {
+    border: none;
+    width: 200px;
+    margin: 5px 2px;
+}
+
+.buttonSubmit {
+    width: 102px;
+    height: 29px;
+    background: #0079BF;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    margin: 5px 2px;
+    border: none;
+}

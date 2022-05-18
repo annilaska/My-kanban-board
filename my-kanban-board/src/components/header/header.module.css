@@ -1,14 +1,7 @@
 .header {
-    height: 55px;
-    background: #0067A3;
-    display: flex;
-    color: #FFFF;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 14px;
+    height: 130px;
+    background: none;
+    position: relative;
 }
 
 h1 {
@@ -17,7 +10,8 @@ h1 {
     font-weight: 400;
     font-size: 28px;
     line-height: 33px;
-    margin-left: 15px
+    margin: 0;
+    margin-left: 15px;
 }
 
 
@@ -26,16 +20,58 @@ h1 {
     height: auto;
 }
 
-.iconForm {
+.buttonIcon {
     margin-left: 10px;
     font-size: 18px;
+    cursor: pointer;
+}
+
+.buttonIconActive {
+    margin-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.AvaIcon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-right: 60px;
+    align-items: center;
+   
 }
 
 
 .LogIn {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     margin-right: 15px;
     align-items: center;
+}
+
+
+.dropdownButton {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+}
+
+.content {
+    display: flex;
+    color: #FFFF;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: start;
+    box-sizing: border-box;
+    padding: 14px;
+    z-index: 2;
+    margin-top: -60px;
+}
+
+.blueLine {
+    height: 55px;
+    background: #0067A3;
 }

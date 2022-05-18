@@ -1,15 +1,16 @@
-// let CARDS = [
-//     {name: 'Backlog'},
-//     {name: 'Ready'},
-//     {name: 'In Progress'},
-//     {name: 'Finished'},
-// ]
-   
-let CARDS = {
+
+const CARDS = {
     Backlog: 'Backlog',
     Ready: 'Ready',
-    InProgress: 'In Progress',
+    In_Progress: 'In_Progress',
     Finished: 'Finished',
 }
 
-export {CARDS}
+const CARDS_COPY = {
+    [CARDS.Backlog]: 'Backlog',
+    [CARDS.Ready]: 'Ready',
+    [CARDS.In_Progress]: 'In Progress',
+    [CARDS.Finished]: 'Finished',
+}
+
+export {CARDS, CARDS_COPY}
