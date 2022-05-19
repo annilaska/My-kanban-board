@@ -6,10 +6,11 @@ import { CARDS } from '../../../../config';
 import { useState } from 'react';
 import FormAddNewTask from '../form/form';
 import { Link } from 'react-router-dom';
+import Select from '../Select/select';
 
 
 const Titles = props => {
-    const { title, listItems, card, addNewTitle, dataArray } = props
+    const { title, listItems, card, addNewTitle } = props
     const [isFormVisible, setFormVisible] = useState(false)
 
 
@@ -22,18 +23,8 @@ const Titles = props => {
         setFormVisible(false)
     }
 
-    const ListSelect = () => {
-       return (
-            
-        <nav className={s.nav}>
-           {listItems.map(item =>
-                <div className={s.title}>{item.title}</div>)}
-         </nav>
-       )
-    }
-        
-       
 
+       
     return (
         <div className={s.list}>
             <h2 className={s.h2}>
@@ -48,19 +39,12 @@ const Titles = props => {
                     <p className={s.mock}>No tasks added yet</p>
                 }
             </div>
-                {card === CARDS.Backlog && <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />}
-                {card === CARDS.Ready && 
-                
-                    <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />
-                
-                }
-                {card === CARDS.In_Progress && <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />}
-                {card === CARDS.Finished && <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />}
+                 <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />
                 {card === CARDS.Backlog && isFormVisible && (
-                    <FormAddNewTask formSubmit={formSubmit} />
+                    <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/>
                 )}
-                {card === CARDS.Ready && isFormVisible && (<ListSelect />)}
-            
+                {card !== CARDS.Backlog && isFormVisible && (<Select {...props} />
+                   )}
         </div>
     )
 }

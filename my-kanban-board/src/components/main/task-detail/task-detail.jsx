@@ -11,11 +11,6 @@ import { formatDate } from '../../../utils';
 import { useState } from 'react';
 
 
-// const continuaDescription = () => {
-//   return (
-
-//   )
-// }
 
 
 const TaskDetail = props => {
@@ -44,9 +39,9 @@ const TaskDetail = props => {
   return (
     <div className={s.taskDetail}>
       <Link to='/'>
-        <div className={s.close}>
+        <button className={s.close}>
           <FontAwesomeIcon icon={faXmark} className={s.closeIcon} />
-        </div>
+        </button>
       </Link>
 
       {task ? (

@@ -4,8 +4,10 @@ import s from './form.module.css';
 import { useState } from 'react';
 
 
+
+
 const FormAddNewTask = props => {
-    const { formSubmit } = props
+    const { formSubmit, setFormVisible } = props
     const [values, setValues] = useState({
         title: '',
         description: '',
@@ -23,11 +25,13 @@ const FormAddNewTask = props => {
         if (values.title) {
             formSubmit(values.title, values.description)
         } else {
-            formSubmit(false)
+            setFormVisible(false)
         }
     }
 
- 
+
+
+
 
     return (
         <form className={s.form} onSubmit={handleSubmit}>
@@ -37,6 +41,7 @@ const FormAddNewTask = props => {
                 name="title"
                 onChange={handleChange}
                 value={values.title}
+                
             />
             <textarea
                 className={s.textarea}
@@ -44,8 +49,11 @@ const FormAddNewTask = props => {
                 name="description"
                 value={values.description}
                 onChange={handleChange}
+                
             />
-            <Button name='Submit' className={s.buttonSubmit} />
+            <div>
+                <Button name='Submit' className={s.buttonSubmit} />
+            </div>
         </form>
     );
 }
