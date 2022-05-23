@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './select.module.css';
-import { CARDS } from '../../../../config';
+// import { CARDS } from '../../../../config';
 
 const Select = props => {
     const { listItems } = props
