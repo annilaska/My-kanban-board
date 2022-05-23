@@ -1,18 +1,29 @@
+@media (max-width: 650px) {
+    h1 {
+        font-size: 20px;
+        transition: .5s;
+    }
+  }
+
+
+
 .header {
     height: 130px;
     background: none;
     position: relative;
 }
 
+
+  
 h1 {
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
     line-height: 33px;
     margin: 0;
     margin-left: 15px;
 }
+
 
 
 .avatar {

@@ -13,6 +13,6 @@
 }
 
 .menuItem:hover {
-    background-color: rgb(216, 220, 224);
+    text-decoration: underline;
     cursor: pointer;
 }

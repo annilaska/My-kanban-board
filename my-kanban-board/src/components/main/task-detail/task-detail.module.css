@@ -21,9 +21,12 @@
 }
 
 
-.close {
-    display: flex;
-    justify-content: flex-end;
+.closeLink {
+    align-self: flex-end;
+}
+
+.closeButton {
+    border: none;
 }
 
 .closeIcon {
@@ -38,6 +41,14 @@
 
 
 .description {
-    margin: 60px;
+    margin-top: 60px;
     cursor: pointer;
+}
+
+.descriptionFild {
+    min-width: 250px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
 }

@@ -8,7 +8,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { CARDS, CARDS_COPY } from '../../../config';
 import { useParams } from 'react-router-dom';
 import { formatDate } from '../../../utils';
-import { useState } from 'react';
+
+
 
 
 
@@ -16,11 +17,7 @@ import { useState } from 'react';
 const TaskDetail = props => {
   let params = useParams()
   const { taskId } = params;
-  const [isTextArea, setTextArea] = useState(false);
 
-  const handleClick = () => {
-    setTextArea(!isTextArea)
-  }
 
   const { dataArray, setData } = props;
   const task = dataArray.find(task => task.id === taskId)
@@ -35,11 +32,23 @@ const TaskDetail = props => {
     setData(updatedTasks)
   }
 
+ 
+  const continueDescription = (e) => {
+    const updatedDescription = dataArray.map(task => {
+      if(task.id === taskId) {
+        return {...task, description: e.target.value}
+      }
+      return task
+    })
+    setData(updatedDescription)
+  }
+
+
 
   return (
     <div className={s.taskDetail}>
-      <Link to='/'>
-        <button className={s.close}>
+      <Link className={s.closeLink} to='/'>
+        <button className={s.closeButton}>
           <FontAwesomeIcon icon={faXmark} className={s.closeIcon} />
         </button>
       </Link>
@@ -48,14 +57,15 @@ const TaskDetail = props => {
         <>
           <div>
             <div>
-                <h2>{task.title}</h2>
-                <p>Status: {CARDS_COPY[task.status]}</p>
+              <h2>{task.title}</h2>
+              <p>Status: {CARDS_COPY[task.status]}</p>
             </div>
             <p className={s.createdAt}>Created at: {formatDate(task.created)}</p>
-            <p className={s.description} onClick={handleClick}>Description: {task.description || 'This task has no description'}</p>
+            <p className={s.description}>Description:</p>
+            <textarea  onChange={continueDescription} id='descriptionText' className={s.descriptionFild}>{task.description || 'This task has no description'}</textarea>
             <p className={s.label}>Change status:</p>
             <select className={s.select} value={task.status} onChange={handleChange}>
-              {Object.values(CARDS).map(list=> {
+              {Object.values(CARDS).map(list => {
                 return (
                   <option className={s.option} key={list} value={list}>{CARDS[list]}</option>
                 )

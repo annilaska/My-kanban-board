@@ -28,7 +28,7 @@ const Header = props => {
       <div className={s.blueLine}/>
       <div className={s.content}>
       <div>
-        <h1>
+        <h1 className={s.headerH1}>
           Awesome Kanban board
         </h1>
       </div>

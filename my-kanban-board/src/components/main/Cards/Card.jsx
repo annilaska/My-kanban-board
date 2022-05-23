@@ -23,12 +23,15 @@ const Cards = props => {
     setData([...dataArray, task])
   }
 
+const a = dataArray.map(card => card.status === CARDS.Backlog)
+const b = Object.values(a).find(a => a.title)
+  
   return (
     <div className={s.cards}>
       {Object.values(CARDS).map(card => {
-          const listItems = dataArray.filter(item => item.status === card)
+         const listItems = dataArray.filter(item => item.status === card)
           return  (
-          <Titles key={CARDS[card]} card={card} title={CARDS_COPY[card]} listItems={listItems || []} addNewTitle={addNewTitle}/>
+          <Titles key={CARDS[card]} card={card} title={CARDS_COPY[card]} listItems={listItems || []}addNewTitle={addNewTitle}/>
           )}
      )}
     </div>    

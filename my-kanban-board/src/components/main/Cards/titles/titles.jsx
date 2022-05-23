@@ -9,8 +9,9 @@ import { Link } from 'react-router-dom';
 import Select from '../Select/select';
 
 
+
 const Titles = props => {
-    const { title, listItems, card, addNewTitle } = props
+    const { title, card, addNewTitle, listItems } = props
     const [isFormVisible, setFormVisible] = useState(false)
 
 
@@ -23,11 +24,19 @@ const Titles = props => {
         setFormVisible(false)
     }
 
+    // const selectItem = () => {
+    //     const titles = dataArray.map(task => task.status === CARDS.Backlog)
+    //     return (<div>{titles.title}</div> )
+    // }
 
-       
+    
+    // const listItems = dataArray.filter(item => item.status === card)
+
     return (
         <div className={s.list}>
-            <h2 className={s.h2}>
+      
+        
+               <h2 className={s.h2}>
                 {title}
             </h2>
             <div>
@@ -43,8 +52,9 @@ const Titles = props => {
                 {card === CARDS.Backlog && isFormVisible && (
                     <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/>
                 )}
-                {card !== CARDS.Backlog && isFormVisible && (<Select {...props} />
-                   )}
+                {card !== CARDS.Backlog && isFormVisible && <Select listItems={listItems}/>}
+        
+        
         </div>
     )
 }

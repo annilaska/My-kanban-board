@@ -1,16 +1,23 @@
 import React from 'react';
 import s from './select.module.css';
+import { CARDS } from '../../../../config';
 
 const Select = props => {
-    const { title, listItems, card, dataArray } = props
+    const { listItems } = props
 
+    // const handleChange = (e) => {
+    //     const updateTask = 
+    // }
+
+              
 
     return (
         <select className={s.select}>
-            <option>{listItems.map(item=> <div>{item.title}</div>)}</option>
+            {
+              listItems.map(item => <option>{item.title}</option>)
+            }            
         </select>
     )
 }
 
 export default Select;
-
