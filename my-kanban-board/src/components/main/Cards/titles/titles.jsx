@@ -25,10 +25,20 @@ const Titles = props => {
         setFormVisible(false)
     }
 
-    // const selectItem = () => {
-    //     const titles = dataArray.map(task => task.status === CARDS.Backlog)
-    //     return (<div>{titles.title}</div> )
-    // }
+    const backlogTitles = () => {
+      const selectItems = dataArray.filter(item => item.status === CARDS.Backlog)
+      return (<div>{selectItems.title}</div>)  
+    }
+   
+    const readyTitles = () => {
+        const selectItems = dataArray.filter(item => item.status === CARDS.Ready)
+        return (<div>{selectItems.title}</div>)  
+      }
+
+      const InProgressTitles = () => {
+        const selectItems = dataArray.filter(item => item.status === CARDS.In_Progress)
+        return (<div>{selectItems.title}</div>)  
+      }
 
     
     const listItems = dataArray.filter(item => item.status === card)
@@ -53,9 +63,9 @@ const Titles = props => {
                 {card === CARDS.Backlog && isFormVisible && (
                     <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/>
                 )}
-                {card !== CARDS.Backlog && isFormVisible && <Select listItems={listItems}/>}
-        
-        
+                {card === CARDS.Ready && isFormVisible && <Select selectList={backlogTitles}/>}
+                {card === CARDS.In_Progress && isFormVisible && <Select selectList={readyTitles}/>}
+                {card === CARDS.Finished && isFormVisible && <Select selectList={InProgressTitles}/>}
         </div>
     )
 }

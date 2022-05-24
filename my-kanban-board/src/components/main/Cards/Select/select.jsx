@@ -2,8 +2,8 @@ import React from 'react';
 import s from './select.module.css';
 // import { CARDS } from '../../../../config';
 
-const Select = props => {
-    const { listItems } = props
+const Select = ({ selectList }) => {
+   
 
     // const handleChange = (e) => {
     //     const updateTask = 
@@ -13,9 +13,7 @@ const Select = props => {
 
     return (
         <select className={s.select}>
-            {
-              listItems.map(item => <option>{item.title}</option>)
-            }            
+            <option>{selectList}</option>         
         </select>
     )
 }
