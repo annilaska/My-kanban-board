@@ -29,9 +29,9 @@ const Cards = props => {
   return (
     <div className={s.cards}>
       {Object.values(CARDS).map(card => {
-         const listItems = dataArray.filter(item => item.status === card)
+         
           return  (
-          <Titles key={CARDS[card]} card={card} title={CARDS_COPY[card]} listItems={listItems || []}addNewTitle={addNewTitle}/>
+          <Titles key={CARDS[card]} card={card} title={CARDS_COPY[card]} {...props} addNewTitle={addNewTitle}/>
           )}
      )}
     </div>    

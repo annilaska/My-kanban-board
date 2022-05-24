@@ -10,8 +10,9 @@ import Select from '../Select/select';
 
 
 
+
 const Titles = props => {
-    const { title, card, addNewTitle, listItems } = props
+    const { title, card, addNewTitle, dataArray } = props
     const [isFormVisible, setFormVisible] = useState(false)
 
 
@@ -30,7 +31,7 @@ const Titles = props => {
     // }
 
     
-    // const listItems = dataArray.filter(item => item.status === card)
+    const listItems = dataArray.filter(item => item.status === card)
 
     return (
         <div className={s.list}>
