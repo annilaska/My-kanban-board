@@ -23,8 +23,6 @@ const Cards = props => {
     setData([...dataArray, task])
   }
 
-// const a = dataArray.map(card => card.status === CARDS.Backlog)
-// const b = Object.values(a).find(a => a.title)
   
   return (
     <div className={s.cards}>

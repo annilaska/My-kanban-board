@@ -19,7 +19,18 @@
 .addButton {
     border: none;
     color: #5E6C84;
+    border-top: 0.5px #000000 solid;
+    text-align: start;
+    width: 250px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+
+.addButton {
     cursor: pointer;
+    border: none;
+    color: #5E6C84;
     border-top: 0.5px #000000 solid;
     text-align: start;
     width: 250px;
@@ -30,6 +41,12 @@
 .addButton:hover {
     color: #000000;
 }
+
+.addButton:disabled {
+    color: #5E6C84;
+    cursor: inherit;
+}
+
 
 .mock {
     font-size: 16px;
@@ -46,9 +63,3 @@
     color: #000000;
 }
 
-.nav {
-    width: 100px;
-    border: 0.5px black solid; 
-    border-radius:6px; 
-   
-}

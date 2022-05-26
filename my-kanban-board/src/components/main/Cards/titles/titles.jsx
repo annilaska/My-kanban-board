@@ -11,10 +11,12 @@ import Select from '../Select/select';
 
 
 
-const Titles = props => {
-    const { title, card, addNewTitle, dataArray } = props
+const Titles = ({ title, card, addNewTitle, dataArray, setData }) => {
+    
     const [isFormVisible, setFormVisible] = useState(false)
 
+
+   
 
     const handleClick = () => {
         setFormVisible(!isFormVisible)
@@ -25,21 +27,13 @@ const Titles = props => {
         setFormVisible(false)
     }
 
-    const backlogTitles = () => {
-      const selectItems = dataArray.filter(item => item.status === CARDS.Backlog)
-      return (<div>{selectItems.title}</div>)  
-    }
    
-    const readyTitles = () => {
-        const selectItems = dataArray.filter(item => item.status === CARDS.Ready)
-        return (<div>{selectItems.title}</div>)  
-      }
+    const backlogTitles = dataArray.filter(item => item.status === CARDS.Backlog)
+    const readyTitles = dataArray.filter(item => item.status === CARDS.Ready)
+    const InProgressTitles = dataArray.filter(item => item.status === CARDS.In_Progress)
 
-      const InProgressTitles = () => {
-        const selectItems = dataArray.filter(item => item.status === CARDS.In_Progress)
-        return (<div>{selectItems.title}</div>)  
-      }
 
+   
     
     const listItems = dataArray.filter(item => item.status === card)
 
@@ -59,13 +53,18 @@ const Titles = props => {
                     <p className={s.mock}>No tasks added yet</p>
                 }
             </div>
-                 <Button className={s.addButton} name='+ Add new card' onClick={handleClick} />
-                {card === CARDS.Backlog && isFormVisible && (
-                    <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/>
-                )}
-                {card === CARDS.Ready && isFormVisible && <Select selectList={backlogTitles}/>}
-                {card === CARDS.In_Progress && isFormVisible && <Select selectList={readyTitles}/>}
-                {card === CARDS.Finished && isFormVisible && <Select selectList={InProgressTitles}/>}
+                {card === CARDS.Ready && <Button  disabled={backlogTitles.length <= 0}  className={s.addButton} name='+ Add new card' onClick={handleClick} />}
+                {card === CARDS.In_Progress && <Button  disabled={readyTitles.length <= 0}  className={s.addButton} name='+ Add new card' onClick={handleClick} />}
+                {card === CARDS.Finished && <Button  disabled={InProgressTitles.length <= 0}  className={s.addButton} name='+ Add new card' onClick={handleClick} />}
+                {card === CARDS.Backlog && <Button className={s.addButton} name='+ Add new card' onClick={handleClick} /> }
+
+                {card === CARDS.Backlog && isFormVisible 
+                && ( <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/> )}
+
+
+                {title === "Ready" && isFormVisible && <Select selectList={backlogTitles} setData={setData} card={card}/>}
+                {title === "In Progress" && isFormVisible && <Select selectList={readyTitles} setData={setData} card={card}/>}
+                {title === "Finished" && isFormVisible && <Select selectList={InProgressTitles} dataArray={dataArray} setData={setData} card={card}/>}
         </div>
     )
 }
