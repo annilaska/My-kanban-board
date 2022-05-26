@@ -1,17 +1,12 @@
 import React from 'react';
 import s from './task-detail.module.css';
 
-
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { CARDS, CARDS_COPY } from '../../../config';
 import { useParams } from 'react-router-dom';
 import { formatDate } from '../../../utils';
-
-
-
-
 
 
 const TaskDetail = props => {

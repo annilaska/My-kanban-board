@@ -62,9 +62,9 @@ const Titles = ({ title, card, addNewTitle, dataArray, setData }) => {
                 && ( <FormAddNewTask formSubmit={formSubmit} setFormVisible={setFormVisible}/> )}
 
 
-                {title === "Ready" && isFormVisible && <Select selectList={backlogTitles} setData={setData} card={card}/>}
-                {title === "In Progress" && isFormVisible && <Select selectList={readyTitles} setData={setData} card={card}/>}
-                {title === "Finished" && isFormVisible && <Select selectList={InProgressTitles} dataArray={dataArray} setData={setData} card={card}/>}
+                {title === "Ready" && isFormVisible && <Select setFormVisible={setFormVisible} selectList={backlogTitles} dataArray={dataArray} setData={setData} card={card}/>}
+                {title === "In Progress" && isFormVisible && <Select setFormVisible={setFormVisible} selectList={readyTitles} dataArray={dataArray} setData={setData} card={card}/>}
+                {title === "Finished" && isFormVisible && <Select  setFormVisible={setFormVisible} selectList={InProgressTitles} dataArray={dataArray} setData={setData} card={card}/>}
         </div>
     )
 }

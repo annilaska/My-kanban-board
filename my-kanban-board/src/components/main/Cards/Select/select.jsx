@@ -1,29 +1,24 @@
 import React from 'react';
 import s from './select.module.css';
-import { useParams } from 'react-router-dom'
 
 
-const Select = ({ selectList, setData, dataArray }) => {
+
+const Select = ({ selectList, setData, dataArray, card, setFormVisible}) => {
    
-   
-    let params = useParams()
-    const { taskId } = params;
-  
-
 
     const handleChange = (e) => {
         const updatedTitles = dataArray.map( item => {
-            if(item.id === e.target.value.id) {
+            if(item.id === e.target.value) {
                 return (
-                    {...item, status: taskId.status}
+                    {...item, status: card}
                 )
             }
             return item
         }) 
         setData(updatedTitles) 
+        setFormVisible(false)
     }
-
-              
+       
 
     return (
         <select className={s.select} onChange={handleChange}>
