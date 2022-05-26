@@ -16,7 +16,6 @@ const Titles = ({ title, card, addNewTitle, dataArray, setData }) => {
     const [isFormVisible, setFormVisible] = useState(false)
 
 
-   
 
     const handleClick = () => {
         setFormVisible(!isFormVisible)
@@ -33,8 +32,6 @@ const Titles = ({ title, card, addNewTitle, dataArray, setData }) => {
     const InProgressTitles = dataArray.filter(item => item.status === CARDS.In_Progress)
 
 
-   
-    
     const listItems = dataArray.filter(item => item.status === card)
 
     return (

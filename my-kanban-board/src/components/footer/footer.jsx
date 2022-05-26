@@ -3,9 +3,8 @@ import s from './footer.module.css';
 import { CARDS } from '../../config';
 
 
-
-const Footer = props => {
-  const {dataArray} = props
+const Footer = ({dataArray}) => {
+ 
 
   const ActivTask = () => {
       const countActivTask = dataArray.filter(task => task.status === CARDS.Backlog)

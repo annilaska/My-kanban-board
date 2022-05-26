@@ -6,8 +6,6 @@ import TaskDetail from './task-detail/task-detail';
 
 
 
-
-
 const Main = props => {
   return (
     <main className={s.main}>

@@ -9,8 +9,6 @@ import FormLogIn from './LogInForm/logInForm';
 
 
 
-
-
 const Header = props => {
   const [isDropDownVisible, setDropDownVisibl] = useState(false);
 

@@ -5,13 +5,11 @@
   }
   
 
-
 .header {
     height: 130px;
     background: none;
     position: relative;
 }
-
 
   
 h1 {
@@ -22,7 +20,6 @@ h1 {
     margin: 0;
     margin-left: 15px;
 }
-
 
 
 .avatar {
